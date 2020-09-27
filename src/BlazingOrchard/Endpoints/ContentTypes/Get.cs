@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using BlazingOrchard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Models;
 
@@ -15,7 +16,7 @@ namespace BlazingOrchard.Endpoints.ContentTypes
             _contentDefinitionManager = contentDefinitionManager;
 
         [HttpGet]
-        public ActionResult<ContentTypeDescriptor> Handle(string contentType)
+        public ActionResult<ContentTypeDefinitionModel> Handle(string contentType)
         {
             var contentTypeDefinition = _contentDefinitionManager.GetTypeDefinition(contentType);
 
@@ -25,34 +26,34 @@ namespace BlazingOrchard.Endpoints.ContentTypes
             return Map(contentTypeDefinition);
         }
 
-        private static ContentTypeDescriptor Map(ContentTypeDefinition source) =>
-            new ContentTypeDescriptor
+        private static ContentTypeDefinitionModel Map(ContentTypeDefinition source) =>
+            new ContentTypeDefinitionModel
             {
                 Name = source.Name,
                 Parts = source.Parts.Select(Map).ToList()
             };
 
-        private static ContentTypePartDescriptor Map(ContentTypePartDefinition source) =>
-            new ContentTypePartDescriptor
+        private static ContentTypePartDefinitionModel Map(ContentTypePartDefinition source) =>
+            new ContentTypePartDefinitionModel
             {
                 Name = source.Name,
-                Part = new ContentPartDescriptor
+                Part = new ContentPartDefinitionModel
                 {
                     Name = source.PartDefinition.Name,
                     Fields = source.PartDefinition.Fields.Select(Map).ToList()
                 },
-                Settings = source.GetSettings<ContentTypePartSettings>()
+                Settings = new JObject(source.Settings)
             };
 
-        private static ContentPartFieldDescriptor Map(ContentPartFieldDefinition source) =>
-            new ContentPartFieldDescriptor
+        private static ContentPartFieldDefinitionModel Map(ContentPartFieldDefinition source) =>
+            new ContentPartFieldDefinitionModel
             {
                 Name = source.Name,
-                Field = new ContentFieldDescriptor
+                FieldDefinition = new ContentFieldDefinitionModel
                 {
                     Name = source.FieldDefinition.Name
                 },
-                Settings = source.GetSettings<ContentPartFieldSettings>()
+                Settings = new JObject(source.Settings)
             };
     }
 }

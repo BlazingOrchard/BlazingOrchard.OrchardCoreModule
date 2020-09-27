@@ -1,6 +1,6 @@
 ﻿namespace BlazingOrchard.Models
 {
-    public class ContentFieldDescriptor
+    public class ContentFieldDefinitionModel
     {
         public string Name { get; set; }
     }
