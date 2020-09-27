@@ -5,7 +5,7 @@ using OrchardCore.ContentManagement;
 
 namespace BlazingOrchard.Endpoints.ContentItems
 {
-    [Route("api/content-items/by-alias/{alias}")]
+    [Route("api/content-items/by-handle/{handle}")]
     public class Get : ControllerBase
     {
         private readonly IOrchardHelper _orchardHelper;
@@ -14,9 +14,9 @@ namespace BlazingOrchard.Endpoints.ContentItems
             _orchardHelper = orchardHelper;
 
         [HttpGet]
-        public async Task<ActionResult<ContentItem>> Handle(string alias)
+        public async Task<ActionResult<ContentItem>> Handle(string handle)
         {
-            var contentItem = await _orchardHelper.GetContentItemByHandleAsync($"slug:{alias}");
+            var contentItem = await _orchardHelper.GetContentItemByHandleAsync(handle);
 
             if (contentItem == null)
                 return NotFound();

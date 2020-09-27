@@ -4,5 +4,6 @@
     {
         public string Name { get; set; }
         public ContentFieldDescriptor Field { get; set; }
+        public ContentPartFieldSettings Settings { get; set; }
     }
 }

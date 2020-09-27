@@ -40,7 +40,8 @@ namespace BlazingOrchard.Endpoints.ContentTypes
                 {
                     Name = source.PartDefinition.Name,
                     Fields = source.PartDefinition.Fields.Select(Map).ToList()
-                }
+                },
+                Settings = source.GetSettings<ContentTypePartSettings>()
             };
 
         private static ContentPartFieldDescriptor Map(ContentPartFieldDefinition source) =>
@@ -50,7 +51,8 @@ namespace BlazingOrchard.Endpoints.ContentTypes
                 Field = new ContentFieldDescriptor
                 {
                     Name = source.FieldDefinition.Name
-                }
+                },
+                Settings = source.GetSettings<ContentPartFieldSettings>()
             };
     }
 }
