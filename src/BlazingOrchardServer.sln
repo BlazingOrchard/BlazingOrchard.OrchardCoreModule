@@ -1,14 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8FD960AA-426D-4E27-8ADF-113DFDC8FABA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{8350D97B-2E0F-423B-996E-0D5D94EB6A51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{185598BB-45D8-4724-A31C-7B0DDBAF34B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingOrchardServer.Web", "web\BlazingOrchardServer.Web\BlazingOrchardServer.Web.csproj", "{9A4C5E1C-15A5-405E-A17B-15C81C9790AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingOrchardServer.Web", "web\BlazingOrchardServer.Web\BlazingOrchardServer.Web.csproj", "{9A4C5E1C-15A5-405E-A17B-15C81C9790AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingOrchard", "BlazingOrchard\BlazingOrchard.csproj", "{1AF15692-FDAF-428F-A5EA-87B9AF038C4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingOrchard", "BlazingOrchard\BlazingOrchard.csproj", "{1AF15692-FDAF-428F-A5EA-87B9AF038C4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "themes", "themes", "{8E9F2D39-7702-414F-8620-CB07D2861646}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingOrchardTheme", "BlazingOrchardTheme\BlazingOrchardTheme.csproj", "{CDA27278-0B77-41DD-966F-113E26F49D95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,11 +31,23 @@ Global
 		{1AF15692-FDAF-428F-A5EA-87B9AF038C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF15692-FDAF-428F-A5EA-87B9AF038C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF15692-FDAF-428F-A5EA-87B9AF038C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA27278-0B77-41DD-966F-113E26F49D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA27278-0B77-41DD-966F-113E26F49D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA27278-0B77-41DD-966F-113E26F49D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA27278-0B77-41DD-966F-113E26F49D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8350D97B-2E0F-423B-996E-0D5D94EB6A51} = {8FD960AA-426D-4E27-8ADF-113DFDC8FABA}
 		{185598BB-45D8-4724-A31C-7B0DDBAF34B9} = {8FD960AA-426D-4E27-8ADF-113DFDC8FABA}
 		{9A4C5E1C-15A5-405E-A17B-15C81C9790AC} = {8350D97B-2E0F-423B-996E-0D5D94EB6A51}
 		{1AF15692-FDAF-428F-A5EA-87B9AF038C4D} = {185598BB-45D8-4724-A31C-7B0DDBAF34B9}
+		{8E9F2D39-7702-414F-8620-CB07D2861646} = {8FD960AA-426D-4E27-8ADF-113DFDC8FABA}
+		{CDA27278-0B77-41DD-966F-113E26F49D95} = {8E9F2D39-7702-414F-8620-CB07D2861646}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B2CCA6E-0220-4A71-A8F6-1F40CC97DE36}
 	EndGlobalSection
 EndGlobal
