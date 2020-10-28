@@ -6,10 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0-rc2-13450" />
+      <PackageReference Include="OrchardCore.Application.Cms.Targets" Version="1.0.0-rc2-15133" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\BlazingOrchardTheme\BlazingOrchardTheme.csproj" />
       <ProjectReference Include="..\..\BlazingOrchard\BlazingOrchard.csproj" />
     </ItemGroup>
 
